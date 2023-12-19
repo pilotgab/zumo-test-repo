@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zumo-test
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'git@github.com:Zumo-Recruiting/zumo-infrastructure-dev-assignment_308190928.git'
+    path: zumo-test
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: 'zumo-test'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas

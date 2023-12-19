@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zumo's Tech Challenge</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+        }
+        th {
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px);
+        }
+        td {
+            font-weight: 300;
+            color: #E0FFFF;
+        }
+        h1, p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-top: 10px;
+            color: #B0E0E6;
+        }
+        .logo {
+            height: 50px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ cdn_url }}/static/images/logo.svg" alt="Zumo" class="logo">
+        <h1>Welcome to Zumo!</h1>
+        <p>Gabriel's Zumo Tech Assignment</p>
+        <table>
+            <tr>
+                <th>Pod Name</th>
+                <td>{{ info.pod_name }}</td>
+            </tr>
+            <tr>
+                <th>Pod IP</th>
+                <td>{{ info.pod_ip }}</td>
+            </tr>
+            <tr>
+                <th>Kubernetes API</th>
+                <td>{{ info.kubernetes_api }}</td>
+            </tr>
+            <tr>
+                <th>Namespace</th>
+                <td>{{ info.namespace }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
