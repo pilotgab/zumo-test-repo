@@ -53,7 +53,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4.0.1
         with:
-          role-to-assume: arn:aws:iam::822469302283:role/zumo-test-oidc-role
+          role-to-assume: arn:aws:iam::822469302283:role/zumo-test-oidc-role2
           aws-region: eu-west-1
 
       - name: Upload HTML report to S3
@@ -69,7 +69,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::822469302283:role/zumo-test-oidc-role
+          role-to-assume: arn:aws:iam::822469302283:role/zumo-test-oidc-role2
           aws-region: eu-west-1
 
       - name: Login to Amazon ECR
