@@ -6,7 +6,7 @@ replicaCount: 15
 
 image:
   repository: 822469302283.dkr.ecr.eu-west-1.amazonaws.com/zumo-test-registry
-  tag: 1da21e5
+  tag: 0b2ed7e
   pullPolicy: Always
 
 
