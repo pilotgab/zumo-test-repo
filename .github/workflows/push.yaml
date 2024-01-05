@@ -89,11 +89,11 @@ jobs:
       
       - name: Syncing  static content to S3
         run: |
-          aws s3 sync ./static s3://zumo-eks-cdn/static
-          aws s3 cp ./templates/index.html s3://zumo-eks-cdn/templates/index.html
+          aws s3 sync ./static s3://zumo-test-reports/static
+          aws s3 cp ./templates/index.html s3://zumo-test-reports/templates/index.html
 
       - name: Invalidating CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id E14RWBGE2ZIKLZ --paths "/templates/index.html"
+        run: aws cloudfront create-invalidation --distribution-id EMSO1RUFLTEB6 --paths "/templates/index.html"
       
 
 
